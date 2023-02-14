@@ -7,6 +7,7 @@ const catchAsync = require('./catchAsync');
 const ExpressError = require('./ExpressError');
 const Joi = require('joi');
 const app = express();
+const PORT = 3000;
 
 const Campground = require('./models/Campground');
 
@@ -91,6 +92,6 @@ app.use((err, req, res, next) => {
     res.status(err.status).render('error', {err});
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Server is running on localhost ;)')
 })
